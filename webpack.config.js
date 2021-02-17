@@ -3,7 +3,6 @@ const path = require('path')
 module.exports = {
   output: {
     filename: 'app.bundle.js'
-
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -26,13 +25,20 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'postcss-loader']
+        use: ['style-loader',
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
+          },
+          'postcss-loader'
+        ]
       }
     ]
   },
   devServer: {
+    watchContentBase: true,
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
