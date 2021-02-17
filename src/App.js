@@ -1,6 +1,11 @@
 import React from 'react'
 import { Navbar } from './components/Navbar'
 import './styles.css'
+import { firebaseConfig } from './config/settings'
+import firebase from 'firebase/app'
+
+firebase.initializeApp(firebaseConfig)
+
 export const App = () => (
   <>
     <Navbar />
