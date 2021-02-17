@@ -3,7 +3,7 @@ import { Navbar } from './components/Navbar'
 import './styles.css'
 import { firebaseConfig } from './config/settings'
 import firebase from 'firebase/app'
-
+import 'firebase/auth'
 firebase.initializeApp(firebaseConfig)
 
 export const App = () => (
