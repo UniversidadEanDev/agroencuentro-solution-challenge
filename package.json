@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode development --env development",
+    "build": "webpack",
     "dev": "webpack serve --mode development --env development",
     "lint": "standard"
   },
@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "autoprefixer": "^10.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
