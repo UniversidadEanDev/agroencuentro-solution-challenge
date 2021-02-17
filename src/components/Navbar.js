@@ -7,7 +7,7 @@ export const Navbar = () => {
         <div class='flex justify-between h-16'>
           <div class='flex px-2 lg:px-0'>
             <div class='flex-shrink-0 flex items-center space-x-4'>
-              {/* <img class='block lg:hidden h-8 w-auto' src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg' alt='Workflow' /> */}
+              <img class='block lg:hidden h-8 w-auto' src='https://images.vexels.com/media/users/3/185524/isolated/preview/e20e4f7385e97848955aea3fe29d577a-dise-ntilde-o-de-flor-de-grano-de-caf-eacute-by-vexels.png' alt='Workflow' />
               <img class='hidden lg:block h-8 w-auto' src='https://images.vexels.com/media/users/3/185524/isolated/preview/e20e4f7385e97848955aea3fe29d577a-dise-ntilde-o-de-flor-de-grano-de-caf-eacute-by-vexels.png' alt='Workflow' />
               <h1 className='text-black text-lg font-bold'>AgroEncuentro</h1>
             </div>
@@ -42,10 +42,10 @@ export const Navbar = () => {
             </button>
           </div>
           <div class='hidden lg:ml-4 lg:flex lg:items-center'>
-            <a href='#' class='ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+            <a href='#' class='ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'>
               Iniciar sesión
             </a>
-            <a href='#' class='ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-yellow-900 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+            <a href='#' class='ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-yellow-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'>
               Regístrate
             </a>
           </div>
