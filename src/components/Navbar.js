@@ -9,7 +9,7 @@ export const Navbar = () => {
             <div class='flex-shrink-0 flex items-center space-x-4'>
               <img class='block lg:hidden h-8 w-auto' src='https://images.vexels.com/media/users/3/185524/isolated/preview/e20e4f7385e97848955aea3fe29d577a-dise-ntilde-o-de-flor-de-grano-de-caf-eacute-by-vexels.png' alt='Workflow' />
               <img class='hidden lg:block h-8 w-auto' src='https://images.vexels.com/media/users/3/185524/isolated/preview/e20e4f7385e97848955aea3fe29d577a-dise-ntilde-o-de-flor-de-grano-de-caf-eacute-by-vexels.png' alt='Workflow' />
-              <h1 className='text-black text-lg font-bold'>EANDROIDS</h1>
+              <h1 className='text-black text-lg font-bold'>AgroEncuentro</h1>
             </div>
             <div class='hidden lg:ml-6 lg:flex lg:space-x-8'>
               <a href='#' class='border-gray-900 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'>
@@ -26,9 +26,7 @@ export const Navbar = () => {
               </a>
             </div>
           </div>
-
           <div class='flex items-center lg:hidden'>
-
             <button class='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' aria-expanded='false'>
               <span class='sr-only'>Open main menu</span>
 
@@ -51,7 +49,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-
     </nav>
   )
 }
