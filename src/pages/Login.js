@@ -106,6 +106,10 @@ export const Login = () => {
                   Entrar
                 </button>
               </div>
+              <div class='text-sm flex items-center justify-center'>
+                <p>¿Aún no tienes una cuenta? <a href='#' class='font-medium text-indigo-600 hover:text-indigo-500'>Crea una</a>
+                </p>
+              </div>
             </form>
           </div>
         </div>
