@@ -6,6 +6,7 @@ import { firebaseConfig } from './config/settings'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import { Login } from './pages/Login'
+import { SignUp } from './pages/SignUp'
 import { AuthLayout } from './layouts/AuthLayout'
 firebase.initializeApp(firebaseConfig)
 
@@ -16,7 +17,8 @@ export const App = () => (
       <Route exact path='/'>
         <AuthLayout>
           <Switch>
-            <Route path='/' exact component={Login} />
+            {/* <Route path='/' exact component={Login} /> */}
+            <Route path='/' exact component={SignUp} />
           </Switch>
         </AuthLayout>
       </Route>
