@@ -1,4 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
-ReactDOM.render(<App />, document.getElementById('app'))
+import { AuthContextProvider } from './context/stores/Auth/AuthContext'
+ReactDOM.render(<AuthContextProvider><App /></AuthContextProvider>, document.getElementById('app'))
