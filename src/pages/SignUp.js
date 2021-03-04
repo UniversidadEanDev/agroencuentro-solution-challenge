@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
 import { signUp } from '../context/actions/user.action'
 import { useAuth } from '../context/stores/Auth/context'
-import { Link } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 
 export const SignUp = () => {
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
   const [confirmPassword, setConfirmPassword] = useState(null)
   const { dispatchUser } = useAuth()
+  const history = useHistory()
+  const location = useLocation()
 
-  const enviarABD = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault()
     if (email !== null && password !== null && confirmPassword !== null) {
       if (password === confirmPassword) {
-        signUp(email, password, dispatchUser)
+        await signUp(email, password, dispatchUser)
+        const from = { pathname: '/dashboard' }
+        console.log('location', location)
+        console.log('from', from)
+        history.replace(from)
       } else {
         console.log('Las contraseñas no coinciden')
       }
@@ -74,7 +80,7 @@ export const SignUp = () => {
                 </div>
               </div>
               <div>
-                <button type='submit' className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' onClick={enviarABD}>
+                <button type='submit' className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' onClick={onSubmit}>
                   Crear Cuenta
                 </button>
               </div>
