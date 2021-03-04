@@ -23,9 +23,7 @@ export const App = () => {
       {/* <Navbar /> */}
       <Switch>
         <Route exact path='/'>
-          {isAuthenticated
-            ? (<Redirect to='/dashboard' />)
-            : (<><Navbar /><Landing /></>)}
+          <><Navbar /><Landing /></>
         </Route>
         <Route path={['/signin', '/signup']} exact>
           {isAuthenticated
