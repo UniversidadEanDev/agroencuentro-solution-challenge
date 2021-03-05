@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
+import { logout } from '../context/actions/user.action'
+import { useAuth } from '../context/stores/Auth/context'
 
 export const Dashboard = () => {
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
-
+  const [dropdownIsOpen, setdropdownIsOpen] = useState(false)
+  const { dispatchUser } = useAuth()
   const openCloseSidebar = () => {
     setSidebarIsOpen(!sidebarIsOpen)
   }
+  const openCloseDropdown = () => {
+    setdropdownIsOpen(!dropdownIsOpen)
+  }
+
   return (
     <div class='h-screen flex overflow-hidden bg-gray-100'>
 
@@ -221,7 +228,7 @@ export const Dashboard = () => {
 
               <div class='ml-3 relative'>
                 <div>
-                  <button class='max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50' id='user-menu' aria-haspopup='true'>
+                  <button class='max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50' id='user-menu' aria-haspopup='true' onClick={openCloseDropdown}>
                     <img class='h-8 w-8 rounded-full' src='http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png' alt='' />
                     <span class='hidden ml-3 text-gray-700 text-sm font-medium lg:block'><span class='sr-only'>Open user menu for </span></span>
                     <svg class='hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
@@ -229,12 +236,14 @@ export const Dashboard = () => {
                     </svg>
                   </button>
                 </div>
-
-                {/* <div class='origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5' role='menu' aria-orientation='vertical' aria-labelledby='user-menu'>
-                  <a href='#' class='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' role='menuitem'>Your Profile</a>
-                  <a href='#' class='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' role='menuitem'>Settings</a>
-                  <a href='#' class='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' role='menuitem'>Logout</a>
-                </div> */}
+                {
+  dropdownIsOpen &&
+    <div class='origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5' role='menu' aria-orientation='vertical' aria-labelledby='user-menu'>
+      <a href='#' class='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' role='menuitem'>Perfil</a>
+      <a href='#' class='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' role='menuitem'>Configuración</a>
+      <button onClick={() => logout(dispatchUser)} class='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' role='menuitem'>Cerrar Sesión</button>
+    </div>
+}
               </div>
             </div>
           </div>

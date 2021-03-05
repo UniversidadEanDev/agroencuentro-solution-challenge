@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-import { Auth } from './config/firebase'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import './styles.css'
@@ -15,12 +14,11 @@ import { PrivateRoute } from './router/PrivateRoutes'
 import { Landing } from './pages/Landing'
 
 export const App = () => {
-  const { stateUser: { isAuthenticated }, dispatchUser } = useAuth()
+  const { stateUser: { isAuthenticated } } = useAuth()
 
   return (
 
     <Router>
-      {/* <Navbar /> */}
       <Switch>
         <Route exact path='/'>
           <><Navbar /><Landing /></>
@@ -29,7 +27,6 @@ export const App = () => {
           {isAuthenticated
             ? (<Redirect to='/dashboard' />)
             : (
-
               <AuthLayout>
                 <Switch>
                   <Route path='/signin' component={Login} />

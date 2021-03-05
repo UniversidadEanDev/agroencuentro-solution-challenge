@@ -34,3 +34,8 @@ const setCurrentUser = (user, isAuthenticated) => {
     payload: { user, isAuthenticated }
   }
 }
+
+export const logout = (dispatch) => {
+  dispatch(setCurrentUser({}, false))
+  localStorage.removeItem('user')
+}
