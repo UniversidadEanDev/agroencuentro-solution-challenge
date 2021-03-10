@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { signUp } from '../context/actions/user.action'
 import { useAuth } from '../context/stores/Auth/context'
-import { Link, useHistory, useLocation } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export const SignUp = () => {
   const [email, setEmail] = useState(null)
@@ -9,7 +9,6 @@ export const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState(null)
   const { dispatchUser } = useAuth()
   const history = useHistory()
-  const location = useLocation()
 
   const onSubmit = async (event) => {
     event.preventDefault()
@@ -17,14 +16,13 @@ export const SignUp = () => {
       if (password === confirmPassword) {
         await signUp(email, password, dispatchUser)
         const from = { pathname: '/dashboard' }
-        console.log('location', location)
-        console.log('from', from)
+
         history.replace(from)
       } else {
-        console.log('Las contraseñas no coinciden')
+        // alert('Las contraseñas no coinciden')
       }
     } else {
-      console.log('Llena todos los campos')
+      // alert('Llena todos los campos')
     }
   }
 

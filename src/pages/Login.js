@@ -18,7 +18,7 @@ export const Login = () => {
       const from = { pathname: '/dashboard' }
       history.replace(from)
     } else {
-      console.log('Llena todos los campos')
+      // console.log('Llena todos los campos')
     }
   }
   return (
