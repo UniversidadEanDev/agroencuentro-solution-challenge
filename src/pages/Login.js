@@ -14,7 +14,6 @@ export const Login = () => {
     event.preventDefault()
     if (email !== null && password !== null) {
       await signIn(email, password, dispatchUser)
-      // const { from } = location.state || { from: { pathname: '/' } }
       const from = { pathname: '/dashboard' }
       history.replace(from)
     } else {
