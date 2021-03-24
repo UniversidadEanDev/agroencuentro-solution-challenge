@@ -19,7 +19,7 @@ export const SignUp = () => {
 
         history.replace(from)
       } else {
-        // alert('Las contraseñas no coinciden')
+        // do some if user doesn't fill fields
       }
     } else {
       // alert('Llena todos los campos')
